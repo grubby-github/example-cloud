@@ -3,6 +3,6 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8081/eureka #配置eureka服务器地址
+      defaultZone: http://192.168.1.95:8081/eureka #配置eureka服务器地址
       register-with-eureka: false #是否需要将自己注册到注册中心(注册中心集群需要设置为true)
       fetch-registry: false #是否需要搜索服务信息(因为自己是注册中心所以为false)
