@@ -19,7 +19,6 @@
 
     <!--包含子模块-->
     <modules>
-        <module>cloud-eureka</module>
     </modules>
 
     <properties>
