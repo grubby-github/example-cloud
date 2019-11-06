@@ -25,27 +25,10 @@
             <pattern>${patternFormat}</pattern>
         </encoder>
     </appender>
-    <!-- AS模块日志 -->
-    <appender name="STDAS" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log_dir}/%d{yyyy-MM-dd}-as.log</fileNamePattern>
-            <maxHistory>${maxHistory}</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>${patternFormat}</pattern>
-        </encoder>
-    </appender>
 
     <!-- root配置 -->
     <root level="${logLevel}">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="STDCMS"/>
     </root>
-    <!-- AS模块配置 -->
-    <logger name="cn.gaoz.example.controller.as.ASController" level="${logLevel}" additivity="false">
-        <appender-ref ref="STDOUT"/>
-        <appender-ref ref="STDAS"/>
-    </logger>
-    <!-- 是否显示SQL -->
-    <!--<logger name="cn.gaoz.example.dao" level="DEBUG"/>-->
 </configuration>
