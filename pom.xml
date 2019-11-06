@@ -20,6 +20,7 @@
     <!--包含子模块-->
     <modules>
     	<module>cloud-eureka</module>
+        <module>cloud-service-a</module>
     </modules>
 
     <properties>
