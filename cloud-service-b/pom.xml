@@ -9,15 +9,15 @@
     </parent>
 
     <groupId>cn.gaoz.example</groupId>
-    <artifactId>cloud-service-a</artifactId>
+    <artifactId>cloud-service-b</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-    <name>cloud-service-a</name>
-    <description>Example Cloud Service A Project</description>
+    <name>cloud-service-b</name>
+    <description>Example Cloud Service B Project</description>
 
     <properties>
         <!-- 当有多个启动类时，可以指定某一个启动类 -->
-        <start-class>cn.gaoz.example.ServiceAApplication</start-class>
+        <start-class>cn.gaoz.example.ServiceBApplication</start-class>
         <spring-cloud.version>Hoxton.RC1</spring-cloud.version>
     </properties>
 

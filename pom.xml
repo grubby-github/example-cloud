@@ -21,6 +21,7 @@
     <modules>
     	<module>cloud-eureka</module>
         <module>cloud-service-a</module>
+        <module>cloud-service-b</module>
     </modules>
 
     <properties>
