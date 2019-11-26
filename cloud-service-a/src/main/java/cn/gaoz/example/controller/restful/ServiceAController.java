@@ -14,7 +14,14 @@ public class ServiceAController {
     private String port;
 
     @GetMapping("/testa")
+    //@HystrixCommand(fallbackMethod="getFallback")
     public String testA(String req) {
         return "req=" + req + ", port=" + port;
     }
+
+//    protected String getFallback(Throwable e) {
+//        System.out.println(e.getMessage());
+//        e.printStackTrace();
+//        return "ServiceA繁忙";
+//    }
 }

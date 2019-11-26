@@ -1,10 +1,10 @@
 server:
-  port: 8086  #服务端口号
-
+  #服务端口号
+  port: 8082
 spring:
   application:
-    name: cloud-service-b  #服务名称-服务之间使用名称进行通讯
-
+    #服务名称 - 服务之间使用名称进行通讯
+    name: cloud-zuul
 eureka:
   client:
     service-url:
@@ -14,13 +14,15 @@ eureka:
   instance:
     prefer-ip-address: true #使用ip地址注册到注册中心
     instance-id: ${spring.cloud.client.ip-address}:${server.port} #注册中心列表中显示的状态参数
-  ribbon:
-    ReadTimeout: 15000  #建立连接超时时间
-    ConnectTimeout: 15000  #读取资源超时间
-
-hystrix:
-  command:
-    default:
-      execution:
-        timeout:
-          enabled: false
+zuul:
+  routes:
+    #设置服务a 路径名称 随便起
+    service-a:
+      path: /cloud-service-a/**
+      #这里写a服务的注册名字
+      serviceId: cloud-service-a
+    #设置服务b 路径名称 随便起
+    service-b:
+      path: /cloud-service-a/**
+      #这里写b服务的注册名字
+      serviceId: cloud-service-a

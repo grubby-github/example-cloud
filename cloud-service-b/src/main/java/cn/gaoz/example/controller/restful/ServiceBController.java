@@ -18,4 +18,15 @@ public class ServiceBController {
         String result = serviceAFeignClient.testA(req);
         return "b to a 访问结果 ----- " + result;
     }
+
+    @GetMapping("/callselft")
+    //@HystrixCommand(fallbackMethod="getFallback")
+    public String callselft(String req) {
+        String result = "访问结果 ----- " + req;
+        return result;
+    }
+
+//    public String getFallback() {
+//        return "ServiceB繁忙";
+//    }
 }
