@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ServletComponentScan
 @EnableScheduling
 @EnableEurekaClient
-//@EnableHystrix
+@EnableHystrix
 public class ServiceAApplication {
 
     public static void main(String[] args) {

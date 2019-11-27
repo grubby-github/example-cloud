@@ -1,5 +1,6 @@
 package cn.gaoz.example.controller.restful;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,13 +21,14 @@ public class ServiceBController {
     }
 
     @GetMapping("/callselft")
-    //@HystrixCommand(fallbackMethod="getFallback")
+    @HystrixCommand(fallbackMethod="fallback")
     public String callselft(String req) {
         String result = "访问结果 ----- " + req;
         return result;
     }
 
-//    public String getFallback() {
-//        return "ServiceB繁忙";
-//    }
+    private String fallback(String name) {
+        System.out.println(name);
+        return "ServiceA繁忙";
+    }
 }

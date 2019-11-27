@@ -1,5 +1,6 @@
 package cn.gaoz.example.controller.restful;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,14 +15,13 @@ public class ServiceAController {
     private String port;
 
     @GetMapping("/testa")
-    //@HystrixCommand(fallbackMethod="getFallback")
+    @HystrixCommand(fallbackMethod="fallback")
     public String testA(String req) {
         return "req=" + req + ", port=" + port;
     }
 
-//    protected String getFallback(Throwable e) {
-//        System.out.println(e.getMessage());
-//        e.printStackTrace();
-//        return "ServiceA繁忙";
-//    }
+    private String fallback(String name) {
+        System.out.println(name);
+        return "ServiceA繁忙";
+    }
 }
