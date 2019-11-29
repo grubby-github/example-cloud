@@ -1,0 +1,7 @@
+﻿http://127.0.0.1:8081/
+http://127.0.0.1:8082/cloud-service-a/rest/testa?req=12345
+http://127.0.0.1:8082/cloud-service-b/rest/call?req=1235
+http://127.0.0.1:8082/cloud-service-b/rest/callselft?req=1235
+http://127.0.0.1:8085/rest/testa?req=12345
+http://127.0.0.1:8086/rest/call?req=1235
+http://127.0.0.1:8086/rest/callselft?req=1235
